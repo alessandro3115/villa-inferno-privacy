@@ -31,7 +31,7 @@
   <header>
     <div class="brand">Villa Inferno · The Zen Circus Official Fan Club</div>
     <h1>Informativa sulla privacy</h1>
-    <p class="subtitle">Ultimo aggiornamento: 22 ottobre 2026</p>
+    <p class="subtitle">Ultimo aggiornamento: 31 ottobre 2026</p>
   </header>
   <main>
     <p>La presente informativa descrive il trattamento dei dati personali effettuato attraverso <strong>Villa Inferno - The Zen Circus Official Fan Club</strong> (l’“App”) e le relative pagine web. È redatta ai sensi del Regolamento (UE) 2016/679 (“GDPR”) e della normativa applicabile in materia di protezione dei dati personali.</p>
@@ -51,6 +51,8 @@
       <li><strong>Dati inseriti dall’utente:</strong> informazioni fornite nel profilo, nei moduli di tesseramento e nelle funzioni Pass o carpooling, ad esempio nome, dati della tessera, evento o informazioni di viaggio inserite dall’utente.</li>
       <li><strong>Documenti e immagini del tesseramento:</strong> fotografie o immagini della tessera inviate dall’utente e conservate nell’area di archiviazione privata prevista dall’App, per gestire la relativa funzione.</li>
       <li><strong>Fan Point e ricompense:</strong> saldo e movimenti dei punti, partecipazione agli eventi, operazioni di riscatto e dati necessari a gestire il premio, incluse eventuali informazioni di consegna o codici resi disponibili dopo il riscatto.</li>
+      <li><strong>Passaporto del Fan e timbri digitali:</strong> identificativo dell’account, eventi e check-in convalidati, data e ora della partecipazione registrata e timbri digitali associati. Il timbro può essere standard Villa Inferno oppure personalizzato con un’immagine dedicata all’evento e, se previsti, i crediti dell’autore.</li>
+      <li><strong>QR personale e verifica amministrativa:</strong> identificativo univoco (token) associato all’account e rappresentato nel QR del Passaporto. Il codice non contiene direttamente nome, indirizzo email o data d’iscrizione, ma può essere ricondotto all’utente tramite il sistema. Quando un amministratore autorizzato lo scansiona, il servizio verifica il token e restituisce il nome registrato e la data di creazione dell’account. La fotocamera viene utilizzata per inquadrare il QR; la funzionalità invia al server il contenuto del codice letto, non fotografie o video ripresi durante la scansione.</li>
       <li><strong>Posizione del dispositivo:</strong> coordinate utilizzate, quando l’utente autorizza la relativa funzione, per verificare la prossimità al luogo di un evento e consentire le funzionalità Fan Point che dipendono dalla posizione. Durante il check-in, le coordinate del dispositivo possono essere inviate a Supabase insieme all’identificativo dell’evento per verificare la partecipazione e applicare le regole dei punti.</li>
       <li><strong>Notifiche locali:</strong> dati tecnici relativi all’evento Fan Point necessari a mostrare sul dispositivo una notifica locale quando viene rilevato l’ingresso nell’area prevista, se le autorizzazioni e le impostazioni del dispositivo lo consentono.</li>
       <li><strong>Messaggi e contenuti:</strong> testi e altri contenuti che l’utente invia attraverso le funzionalità di messaggistica o community.</li>
@@ -60,7 +62,7 @@
 
     <h2>3. Finalità e basi giuridiche</h2>
     <ul>
-      <li><strong>Fornire le funzioni dell’App:</strong> creare e gestire account, autenticare l’utente, recuperare la password, gestire Fan Point, tesseramento, Pass e ricompense. Base giuridica: esecuzione del servizio richiesto dall’utente e delle relative misure precontrattuali.</li>
+      <li><strong>Fornire le funzioni dell’App:</strong> creare e gestire account, autenticare l’utente, recuperare la password, gestire Fan Point, Passaporto del Fan, timbri digitali, QR personali e verifiche amministrative, tesseramento, Pass e ricompense. Base giuridica: esecuzione del servizio richiesto dall’utente e delle relative misure precontrattuali.</li>
       <li><strong>Funzioni basate sulla posizione:</strong> verificare la vicinanza a un evento e consentire il check-in Fan Point. La base giuridica deve essere individuata in relazione alla funzione specifica e al modo in cui viene presentata all’utente; le autorizzazioni del dispositivo regolano l’accesso tecnico alla posizione e non costituiscono, da sole, una base giuridica GDPR in ogni circostanza. L’utente può revocare il permesso dalle impostazioni del dispositivo.</li>
       <li><strong>Gestire i messaggi:</strong> ricevere, moderare e condividere i contenuti secondo quanto indicato nella schermata in cui vengono inviati. Base giuridica: erogazione della funzione richiesta e, quando applicabile, consenso dell’utente alla condivisione.</li>
       <li><strong>Sicurezza e prevenzione degli abusi:</strong> limitare richieste automatizzate, prevenire utilizzi illeciti e proteggere il servizio. Base giuridica: legittimo interesse del titolare alla sicurezza e al corretto funzionamento, nel rispetto dei diritti degli utenti.</li>
@@ -69,6 +71,10 @@
 
     <h2>4. Posizione e Fan Point</h2>
     <p>Quando l’utente utilizza una funzione Fan Point che richiede la posizione, l’App può chiedere il permesso di accedere alla posizione del dispositivo. La posizione è utilizzata per verificare la vicinanza al luogo dell’evento e applicare le regole dell’iniziativa. L’utente può negare o revocare il permesso dalle impostazioni del dispositivo; in tal caso le funzioni che necessitano della posizione potrebbero non essere disponibili. L’App non è destinata a monitorare continuativamente gli spostamenti dell’utente.</p>
+
+    <h2>4.1 Passaporto del Fan, timbri e QR personale</h2>
+    <p>Dopo un check-in Fan Point convalidato, il Passaporto del Fan può mostrare un timbro digitale collegato al concerto. I timbri, standard o personalizzati, costituiscono lo storico personale delle presenze registrate e non comportano la pubblicazione automatica della partecipazione ad altri utenti.</p>
+    <p>Il Passaporto mostra inoltre un QR personale, formato da un identificativo univoco associato all’account. La scansione con lo strumento riservato agli amministratori consente una verifica presso Supabase e la visualizzazione del nome registrato e della data di iscrizione, intesa come data di creazione dell’account. Le immagini della fotocamera non sono caricate sul server da questa funzione; viene trasmesso soltanto il valore del QR da verificare. Il QR non costituisce da solo una prova dell’identità della persona né autorizza check-in, punti o riscatti. Poiché un QR può essere fotografato o copiato, è opportuno non diffonderlo pubblicamente.</p>
 
     <h2>5. Messaggi, community e contenuti condivisi</h2>
     <p>I messaggi inviati attraverso le apposite funzioni possono essere letti dagli amministratori autorizzati per la gestione della community. Quando la schermata di invio informa che un messaggio può essere condiviso, il contenuto può essere comunicato alla community e/o ai The Zen Circus secondo quanto indicato all’utente al momento dell’invio. Si invita a non inserire informazioni private, dati particolari o dati di altre persone non necessari. Una copia già condivisa o salvata da terzi potrebbe non essere recuperabile dal titolare.</p>
@@ -91,6 +97,7 @@
     <ul>
       <li><strong>Dati dell’account:</strong> per la durata dell’account e il tempo necessario a completare la cancellazione, fatto salvo ciò che debba essere conservato per obblighi legali o tutela dei diritti.</li>
       <li><strong>Tesseramento, Fan Point e ricompense:</strong> per il tempo necessario a gestire tessere, punti, riscatti, consegne, verifiche e contestazioni connesse.</li>
+      <li><strong>Passaporto, timbri e QR personale:</strong> i dati dei timbri, delle presenze registrate e l’identificativo QR restano collegati all’account per il tempo necessario a fornire il servizio e gestire eventuali verifiche o contestazioni; in caso di richiesta di cancellazione si applicano le procedure e le eventuali eccezioni descritte alla sezione 10.</li>
       <li><strong>Messaggi e contenuti:</strong> per il tempo necessario alla gestione e moderazione della community, salvo cancellazione anticipata quando applicabile o conservazione necessaria per ragioni legittime.</li>
       <li><strong>Log tecnici e di sicurezza:</strong> per il tempo limitato necessario a garantire sicurezza, prevenire abusi e diagnosticare problemi, secondo le impostazioni dei fornitori. I dati anti-spam sono pseudonimizzati tramite hash; la loro eliminazione dipende dalle procedure di pulizia effettivamente eseguite e dalle impostazioni del servizio, quindi non si garantisce una cancellazione automatica esattamente dopo 24 ore.</li>
       <li><strong>Dati soggetti a obblighi di legge:</strong> per il periodo imposto dalla normativa applicabile.</li>
@@ -99,6 +106,7 @@
 
     <h2>9. Sicurezza dei dati</h2>
     <p>Il titolare adotta misure tecniche e organizzative adeguate per proteggere i dati personali da accessi non autorizzati, perdita, alterazione o divulgazione. L’accesso amministrativo ai dati deve essere limitato alle persone autorizzate e alle esigenze di gestione del servizio. Anche l’utente è tenuto a proteggere le proprie credenziali e a segnalare tempestivamente eventuali accessi sospetti.</p>
+    <p>Il QR contiene un token e non espone direttamente i dati anagrafici; l’associazione tra codice e account, con la restituzione dei dati di iscrizione, è effettuata dal servizio backend dopo una verifica delle autorizzazioni amministrative. Il QR non va utilizzato come credenziale di accesso né come unico elemento per accertare l’identità del possessore.</p>
 
     <h2 id="cancellazione-account">10. Richiesta di cancellazione dell’account e dei dati</h2>
     <div class="panel">
@@ -107,6 +115,7 @@
       <p>In alternativa, scrivi a <a href="mailto:alessandro3115@gmail.com?subject=Richiesta%20cancellazione%20account%20Villa%20Inferno">alessandro3115@gmail.com</a> dall’indirizzo email collegato all’account, se possibile. Non inviare la password. Potrà essere richiesta una verifica proporzionata dell’identità per impedire cancellazioni non autorizzate.</p>
     </div>
     <p>La richiesta sarà presa in carico e la procedura di cancellazione eliminerà i dati dell’account gestiti dai sistemi applicativi, nei limiti previsti dalla procedura tecnica, salvo quelli che debbano essere conservati per obblighi di legge o per accertare, esercitare o difendere un diritto. L’operazione può non essere atomica: in caso di errore tecnico, l’utente deve contattare il titolare per completare o verificare la richiesta. L’eventuale conservazione residua sarà limitata a quanto necessario e i dati non saranno utilizzati per altre finalità. I dati presenti nelle copie di sicurezza potranno essere eliminati secondo il ciclo tecnico di sovrascrittura del fornitore. Dopo aver completato la cancellazione dell’account, il titolare elimina manualmente anche l’email ricevuta con la richiesta di cancellazione; ciò non garantisce la rimozione immediata di eventuali copie tecniche o backup gestiti dai fornitori.</p>
+    <p>La richiesta di cancellazione comprende anche i dati del Passaporto del Fan, i timbri digitali personali e il token QR associato all’account, secondo i limiti e le verifiche della procedura tecnica sopra descritta. L’effettiva rimozione dei record collegati deve essere verificata al completamento della richiesta.</p>
 
     <h2>11. Diritti dell’utente</h2>
     <p>Nei casi e nei limiti previsti dal GDPR, l’utente può chiedere l’accesso ai dati personali, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità dei dati e può opporsi ai trattamenti basati sul legittimo interesse. Quando il trattamento si basa sul consenso, l’utente può revocarlo in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente alla revoca.</p>
