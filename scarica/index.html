@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Villa Inferno – The Zen Circus Official Fan Club. La pagina ufficiale per scaricare l'app su iPhone e Android.">
+  <title>Scarica Villa Inferno · The Zen Circus Official Fan Club</title>
+  <style>
+    :root { color-scheme: dark; font-family: system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:radial-gradient(circle at 50% 15%,#2b230e 0%,#0a0a0a 45%,#050505 100%); color:#f6f2e9; min-height:100vh; display:grid; place-items:center; padding:20px; }
+    main { width:min(100%,470px); text-align:center; border:1px solid #88702c; border-radius:22px; background:rgba(11,11,11,.94); padding:42px 23px; box-shadow:0 12px 50px #000a; }
+    .kicker { color:#d4af37; font-size:.75rem; letter-spacing:.25em; font-weight:750; text-transform:uppercase; }
+    h1 { margin:16px 0 5px; color:#d4af37; font-weight:900; letter-spacing:.12em; font-size:clamp(1.75rem,6vw,2.45rem); }
+    .subtitle { color:#f0eee9; font-size:.88rem; letter-spacing:.1em; font-weight:700; line-height:1.6; }
+    .line { width:62px; height:2px; background:#d4af37; margin:28px auto; }
+    .motto { color:#ddd6c7; font-style:italic; font-size:1.05rem; margin:15px 0 28px; }
+    .status { padding:15px; border-radius:12px; border:1px solid #6c5824; background:#1f1a10; font-weight:700; }
+    .store-list { display:grid; gap:12px; margin:25px auto 0; max-width:310px; }
+    .store-link { display:block; padding:15px 18px; border-radius:12px; background:#d4af37; color:#080808; text-decoration:none; font-size:1rem; font-weight:850; }
+    .store-link:hover,.store-link:focus-visible { background:#f2d374; }
+    .store-link[hidden],.status[hidden] { display:none; }
+    .note { font-size:.85rem; line-height:1.65; color:#aaa69d; margin:24px auto 0; max-width:350px; }
+    footer { margin-top:30px; font-size:.75rem; color:#a8a49b; }
+    footer a { color:#d4af37; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="kicker">Official Fan Club</div>
+    <h1>VILLA INFERNO</h1>
+    <div class="subtitle">THE ZEN CIRCUS<br>OFFICIAL FAN CLUB</div>
+    <div class="line"></div>
+    <p class="motto">Fatta dai fan, per i fan.</p>
+    <div id="coming-soon" class="status">Disponibile a breve su App Store e Google Play.</div>
+    <div id="go-live" class="status" hidden>Ti stiamo indirizzando allo store del tuo telefono…</div>
+    <div class="store-list" id="store-list" hidden>
+      <a class="store-link" id="ios-link" href="#" rel="noopener">Scarica su App Store</a>
+      <a class="store-link" id="android-link" href="#" rel="noopener">Scarica su Google Play</a>
+    </div>
+    <p class="note">L'app è gratuita. Per entrare è necessario un codice personale, distribuito gratuitamente durante le iniziative del Fan Club.</p>
+    <footer><a href="../privacy.html">Informativa privacy</a></footer>
+  </main>
+  <script>
+    "use strict";
+    // Attivare solo quando ENTRAMBE le schede pubbliche degli store sono raggiungibili.
+    // Questo file è indipendente dall'app Flutter e dal progetto Supabase.
+    const config = {
+      published: false,
+      iosUrl: "",
+      androidUrl: ""
+    };
+    const ready = config.published &&
+      /^https:\/\//.test(config.iosUrl) &&
+      /^https:\/\//.test(config.androidUrl);
+    if (ready) {
+      const ios = document.getElementById("ios-link");
+      const android = document.getElementById("android-link");
+      ios.href = config.iosUrl;
+      android.href = config.androidUrl;
+      document.getElementById("coming-soon").hidden = true;
+      document.getElementById("go-live").hidden = false;
+      document.getElementById("store-list").hidden = false;
+      const ua = navigator.userAgent || "";
+      const isApple = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+      const target = isApple ? config.iosUrl : isAndroid ? config.androidUrl : "";
+      if (target) window.location.replace(target);
+      else document.getElementById("go-live").textContent =
+        "Scegli lo store del tuo dispositivo.";
+    }
+  </script>
+</body>
+</html>
